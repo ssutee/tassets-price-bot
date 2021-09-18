@@ -108,7 +108,7 @@ const getGrowthRatio = async () => {
 };
 
 const restart = async () => {
-  await wait(10000);
+  await wait(60000);
   main()
     .then(() => restart().catch(() => {}))
     .catch((error) => {
@@ -144,8 +144,6 @@ const main = async () => {
     client.set(synth + "-swap-price", swapPrice);
     client.set(synth + "-market-cap", marketCap);
     client.set(synth + "-diff-percent", diffPercent);
-    console.log(diffPercent);
-    console.log(marketCap);
   }
   client.set("collateral-ratio", await getCollateralRatio());
   client.set("growth-ratio", await getGrowthRatio());
