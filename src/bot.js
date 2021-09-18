@@ -16,8 +16,8 @@ const bot = new TelegramBot(token, { polling: true });
 
 bot.onText(/\/(eur|jpy|xau)/, async (msg, match) => {
   const chatId = msg.chat.id;
-  const collateralRatio = await client.getAsync("collateral-ratio");
-  const growthRatio = await client.getAsync("growth-ratio");
+  const collateralRatio = await client.getAsync("tassets-collateral-ratio");
+  const growthRatio = await client.getAsync("tassets-growth-ratio");
   const resp = match[1];
   const totalSupply = await client.getAsync(resp + "-total-supply");
   const swapPrice = await client.getAsync(resp + "-swap-price");

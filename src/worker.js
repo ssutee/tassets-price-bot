@@ -145,8 +145,8 @@ const main = async () => {
     client.set(synth + "-market-cap", marketCap);
     client.set(synth + "-diff-percent", diffPercent);
   }
-  client.set("collateral-ratio", await getCollateralRatio());
-  client.set("growth-ratio", await getGrowthRatio());
+  client.set("tassets-collateral-ratio", await getCollateralRatio());
+  client.set("tassets-growth-ratio", await getGrowthRatio());
 };
 
 main()
